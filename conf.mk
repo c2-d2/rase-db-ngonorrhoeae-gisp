@@ -8,16 +8,12 @@
 # License: MIT
 #
 
-##
-## TODO: Adjust all configuration.
-##
-
 #########
 # INDEX #
 #########
 
 #db name
-name=my-example-db
+name=ngonorrhoeae-usa
 
 # k-mer size, can contain multiple values
 k=18
@@ -26,14 +22,17 @@ k=18
 # ANTIBIOTICS #
 ###############
 
-antibiotics:=ant1 ant2
+antibiotics:=cfm cro cip azi
 
 ###############
 # BREAKPOINTS #
 ###############
 
-ant1:=0.06  # Antibiotics 1
-ant2:=0.50  # Antibiotics 2
+# Abbreviations: CFX, cefixime; CRO, ceftriaxone; ESC, extended-spectrum cephalosporin
+cfm=0.250 # cefixime (CFX in the original paper)
+cro=0.125 # ceftriaxone (CRO in the original paper)
+cip=1.000 # ciprofloxacin (CIPRO in the original paper)
+azi=2.000 # azithromycin (AZI in the original paper)
 
 
 #############
