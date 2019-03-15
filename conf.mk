@@ -28,9 +28,9 @@ antibiotics:=cfm cro cip azi
 # BREAKPOINTS #
 ###############
 
-# Abbreviations: CFX, cefixime; CRO, ceftriaxone; ESC, extended-spectrum cephalosporin
-cfm=0.250 # cefixime (CFX in the original paper)
-cro=0.125 # ceftriaxone (CRO in the original paper)
+# ESC = extended-spectrum cephalosporin
+cfm=0.250 # cefixime (CFX in the original paper, belongs to ESC)
+cro=0.125 # ceftriaxone (CRO in the original paper, belongs to ESC)
 cip=1.000 # ciprofloxacin (CIPRO in the original paper)
 azi=2.000 # azithromycin (AZI in the original paper)
 
