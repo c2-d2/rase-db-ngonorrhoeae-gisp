@@ -3,7 +3,7 @@ include ../conf.mk
 all: .complete
 
 .complete:
-	./create_example_isolates.sh
+	tar xvf ../published/gcgs-contigs.tar.gz
 	touch $@
 
 clean:

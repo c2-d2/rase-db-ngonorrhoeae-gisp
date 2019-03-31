@@ -9,7 +9,7 @@ include ../conf.mk
 all: .contigs.complete .tree.complete
 
 .contigs.complete:
-	wget https://zenodo.org/record/2603320/files/gcgs.contigs.fasta.gz
+	wget https://zenodo.org/record/2618836/files/gcgs-contigs.tar.gz
 	touch $@
 
 .tree.complete:
@@ -17,5 +17,5 @@ all: .contigs.complete .tree.complete
 	touch $@
 
 clean:
-	rm -f .*.complete gcgs.contigs.fasta.gz gcgs.tree.nw
+	rm -f .*.complete gcgs-contigs.tar.gz gcgs.tree.nw
 
