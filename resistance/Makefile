@@ -24,13 +24,16 @@ step1: ## Print order of leaves to a file (to keep the same order everywhere)
 	rase_db_tree_print_order.py -i ../tree/tree.newick > _leaves.tsv
 
 step2: ## Sort metadata tables
-	cat ../published/isolates.example.tsv | sort_with_header.sh -k 1 > _isolates.tsv
-	cut -f1 _isolates.tsv | tail -n +2 > _taxids.txt
-	cut -f2 _isolates.tsv | tail -n +2 > _phylogroups.txt
+	cat ../published/table_s1.tsv | sort_with_header.sh -k 1 > _isolates.tsv
 
-step3: ## Assign resistance categories (apply breakpoints)
-	rase_db_assign_re_cat.py --in-tsv _isolates.tsv --taxid-col 0 --breakpoint $(ant1) --mic-col 2 --antibiotic ant1 > _res_cat.ant1.tsv
-	rase_db_assign_re_cat.py --in-tsv _isolates.tsv --taxid-col 0 --breakpoint $(ant2) --mic-col 3 --antibiotic ant1 > _res_cat.ant2.tsv
+	cut -f1 _isolates.tsv | tail -n +2 > _taxids.txt
+	cut -f15 _isolates.tsv | tail -n +2 > _phylogroups.txt
+
+step3: ## assign resistance categories (apply breakpoints)
+	rase_db_assign_re_cat.py -i _isolates.tsv -t 0 -b $(cfm) -m 1 -a cfm > _res_cat.cfm.tsv
+	rase_db_assign_re_cat.py -i _isolates.tsv -t 0 -b $(cro) -m 2 -a cro > _res_cat.cro.tsv
+	rase_db_assign_re_cat.py -i _isolates.tsv -t 0 -b $(cip) -m 3 -a cip > _res_cat.cip.tsv
+	rase_db_assign_re_cat.py -i _isolates.tsv -t 0 -b $(azm) -m 4 -a azm > _res_cat.azm.tsv
 
 step4: ## Perform ancestral state reconstruction (infer missing resistance categories)
 	for ant in $(antibiotics); do \

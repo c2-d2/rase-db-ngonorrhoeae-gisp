@@ -22,7 +22,7 @@ k=18
 # ANTIBIOTICS #
 ###############
 
-antibiotics:=cfm cro cip azi
+antibiotics:=cfm cro cip azm
 
 ###############
 # BREAKPOINTS #
@@ -32,5 +32,5 @@ antibiotics:=cfm cro cip azi
 cfm=0.250 # cefixime (CFX in the original paper, belongs to ESC)
 cro=0.125 # ceftriaxone (CRO in the original paper, belongs to ESC)
 cip=1.000 # ciprofloxacin (CIPRO in the original paper)
-azi=2.000 # azithromycin (AZI in the original paper)
+azm=2.000 # azithromycin (AZI in the original paper)
 
