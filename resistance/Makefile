@@ -26,7 +26,7 @@ step1: ## Print order of leaves to a file (to keep the same order everywhere)
 step2: ## Sort metadata tables
 	cat ../published/table_s1.tsv | sort_with_header.sh -k 1 > _isolates.tsv
 	cut -f1 _isolates.tsv | tail -n +2 > _taxids.tsv
-	cut -f12 _isolates.tsv | tail -n +2 | perl -pe 's/(-|new)/NA/g' > _ngmast.tsv
+	cut -f11 _isolates.tsv | tail -n +2 | perl -pe 's/(-|new)/NA/g' > _ngmast.tsv
 	cut -f15 _isolates.tsv | tail -n +2 > _phylogroups.tsv
 
 step3: ## assign resistance categories (apply breakpoints)
