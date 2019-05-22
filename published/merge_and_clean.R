@@ -8,5 +8,6 @@ df.mlst <- read.delim("mlst.tsv",
 
 df <- merge(df.sup, df.mlst, by.x = 1, by.y = 1)
 df[df == "-"] <- NA
+df[df == "new"] <- NA
 write.table(df, "isolates.tsv", sep = "\t", quote = F, row.names = F)
 
