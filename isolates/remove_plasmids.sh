@@ -14,7 +14,7 @@ if [[ $NARGS -ne 1 ]]; then
 	exit 1
 fi
 
-seqtk seq contigs/GCGS0326.fa \
+seqtk seq "$1" \
 	| perl -pe 's/\n/\t/g' \
 	| perl -pe 's/\t>/\n>/g' \
 	| awk 'BEGIN{while((getline<"../published/plasmids.txt")>0)l[">"$1]=1}/^>/{f=!l[$1]}f' \
