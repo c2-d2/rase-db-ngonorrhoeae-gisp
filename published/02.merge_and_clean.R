@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-df.sup <- read.delim("table_s1.tsv",
+df.sup <- read.delim("table_s1.corrected_azm.tsv",
                      header = TRUE,
                      stringsAsFactors = F)
 df.mlst <- read.delim("mlst.tsv",

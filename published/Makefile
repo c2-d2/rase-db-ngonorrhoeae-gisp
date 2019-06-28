@@ -9,7 +9,8 @@ include ../*.mk
 all: isolates.tsv
 
 isolates.tsv: mlst.tsv table_s1.tsv
-	./merge_and_clean.R
+	./01.correct-azm.R
+	./02.merge_and_clean.R
 
 clean:
 	rm -f .*.complete isolates.tsv
