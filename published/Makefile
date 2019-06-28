@@ -13,5 +13,6 @@ isolates.tsv: mlst.tsv table_s1.tsv
 	./02.merge_and_clean.R
 
 clean:
-	rm -f .*.complete isolates.tsv
+	rm -f .*.complete isolates.tsv table_s1.corrected_azm.tsv
+
 
