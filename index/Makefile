@@ -13,7 +13,7 @@ all: $(foreach onek,$(k),.compress.$(onek).complete)
 	touch $@
 
 .index.%.complete:
-	prophyle index -k $* -A -g ../isolates ../tree/tree.newick $(name).k$*
+	prophyle index -T -k $* -A -g ../isolates ../tree/tree.newick $(name).k$*
 	touch $@
 
 clean:
