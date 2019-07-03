@@ -13,7 +13,7 @@
 #########
 
 #db name
-name=ngonorrhoeae-usa-wo-plasmids
+name=ngonorrhoeae-usa
 
 # k-mer size, can contain multiple values
 k=18
