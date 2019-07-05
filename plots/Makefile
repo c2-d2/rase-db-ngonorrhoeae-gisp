@@ -9,7 +9,7 @@ all: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
 .plot.complete: $(foreach ant,$(antibiotics),.plot.$(ant).complete)
 
 .stats.complete:
-	../../scripts/compute_stats.py ../resistance/res_cat.tsv > $(name).phylogroups.tsv
+	rase_db_compute_stats.py ../resistance/res_cat.tsv > $(name).phylogroups.tsv
 	touch $@
 
 .plot.%.complete:
@@ -27,7 +27,6 @@ all: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
 		-sOutputFile=$(name).mic.pdf \
 		$(foreach ant,$(antibiotics),res_cat.$(ant).zoomed.pdf)
 
-	../../scripts/reproducible_pdf.sh $(name).mic.pdf
 	touch $@
 
 .merge.res_tree.complete: $(wildcard ../resistance/_res_tree.*.pdf)
@@ -38,7 +37,6 @@ all: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
 		-sOutputFile=$(name).res_tree.pdf \
 		$(foreach ant,$(antibiotics),../resistance/_res_tree.$(ant).pdf)
 
-	../../scripts/reproducible_pdf.sh $(name).res_tree.pdf
 	touch $@
 
 clean:
