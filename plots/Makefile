@@ -10,13 +10,13 @@
 all:
 	$(MAKE) -C .. plots
 
-plots: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
+plots: .plot.complete .stats.complete .merge.mic.complete #.merge.res_tree.complete
 
 $(info $(antibiotics))
 .plot.complete: $(foreach ant,$(antibiotics),.plot.$(ant).complete)
 
 .stats.complete:
-	rase_db_compute_stats.py ../resistance/res_cat.tsv > lineages.stats.tsv
+	rase_db_compute_stats.py ../resistance/res_cat.tsv > $(name).lineages.tsv
 	touch $@
 
 .plot.%.complete:
