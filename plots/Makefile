@@ -4,19 +4,24 @@
 # License: MIT
 #
 
-all: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
+.PHONY: plots
 
+# trick to ensure that path is exported
+all:
+	$(MAKE) -C .. plots
+
+plots: .plot.complete .stats.complete .merge.mic.complete .merge.res_tree.complete
+
+$(info $(antibiotics))
 .plot.complete: $(foreach ant,$(antibiotics),.plot.$(ant).complete)
 
 .stats.complete:
-	rase_db_compute_stats.py ../resistance/res_cat.tsv > $(name).phylogroups.tsv
+	rase_db_compute_stats.py ../resistance/res_cat.tsv > lineages.stats.tsv
 	touch $@
 
 .plot.%.complete:
-	plot_mic.R ../resistance/res_cat.tsv -b $($*) $* res_cat.$*.basic.pdf
-	reproducible_pdf.sh                              res_cat.$*.basic.pdf
-	plot_mic.R -z ../resistance/res_cat.tsv -b $($*) $* res_cat.$*.zoomed.pdf
-	reproducible_pdf.sh                                 res_cat.$*.zoomed.pdf
+	rase_db_plot_mic.R ../resistance/res_cat.tsv -b $($*) $* res_cat.$*.basic.pdf
+	rase_db_plot_mic.R -z ../resistance/res_cat.tsv -b $($*) $* res_cat.$*.zoomed.pdf
 	touch $@
 
 .merge.mic.complete: .plot.complete
