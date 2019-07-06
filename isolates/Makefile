@@ -3,9 +3,11 @@ include ../*.mk
 all: .complete
 
 .complete:
-	tar xvf ../published/gcgs-contigs.tar.gz --strip-components=1
-	touch $@
+	for x in contigs/*.fa; do\
+		b=$$(basename $$x); \
+		./remove_plasmids.sh $$x > $$b; \
+	done
+	touch .complete
 
 clean:
-	rm -f *.fa .complete
-
+	rm -f .complete *.fa

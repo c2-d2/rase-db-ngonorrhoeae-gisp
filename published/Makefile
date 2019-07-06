@@ -6,16 +6,13 @@
 
 include ../*.mk
 
-all: .contigs.complete .tree.complete
+all: isolates.tsv
 
-.contigs.complete:
-	wget https://zenodo.org/record/2618836/files/gcgs-contigs.tar.gz
-	touch $@
-
-.tree.complete:
-	wget https://zenodo.org/record/2603320/files/gcgs.tree.nw
-	touch $@
+isolates.tsv: mlst.tsv table_s1.tsv
+	./01.correct-azm.R
+	./02.merge_and_clean.R
 
 clean:
-	rm -f .*.complete gcgs-contigs.tar.gz gcgs.tree.nw
+	rm -f .*.complete isolates.tsv table_s1.corrected_azm.tsv
+
 
