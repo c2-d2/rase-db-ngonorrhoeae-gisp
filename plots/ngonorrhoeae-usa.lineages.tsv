@@ -1,4 +1,4 @@
-pg	count	azm_R	azm_r	azm_Rr	azm_S	azm_s	azm_Ss	cfm_R	cfm_r	cfm_Rr	cfm_S	cfm_s	cfm_Ss	cip_R	cip_r	cip_Rr	cip_S	cip_s	cip_Ss	cro_R	cro_r	cro_Rr	cro_S	cro_s	cro_Ss
+lineage	count	azm_R	azm_r	azm_Rr	azm_S	azm_s	azm_Ss	cfm_R	cfm_r	cfm_Rr	cfm_S	cfm_s	cfm_Ss	cip_R	cip_r	cip_Rr	cip_S	cip_s	cip_Ss	cro_R	cro_r	cro_Rr	cro_S	cro_s	cro_Ss
 1	65	4	0	4	61	0	61	0	0	0	53	12	65	64	0	64	1	0	1	1	0	1	64	0	64
 2	75	15	0	15	60	0	60	4	0	4	70	1	71	12	0	12	63	0	63	3	0	3	72	0	72
 3	86	46	0	46	40	0	40	0	0	0	79	7	86	1	0	1	85	0	85	0	0	0	86	0	86
