@@ -13,7 +13,7 @@
 #########
 
 #db name
-name=ngonorrhoeae-usa
+name=ngonorrhoeae-gisp
 
 # k-mer size, can contain multiple values
 k=18
