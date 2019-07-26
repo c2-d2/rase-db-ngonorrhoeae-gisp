@@ -2,7 +2,7 @@
 
 ## Dataset
 
-We used 1102 clinical gonococcal isolates collected from 2000 to 2013 by the Centers for Disease Control and Prevention’s Gonococcal Isolate Surveillance Project \[[Grad *et al.*, 2016]\](https://www.ncbi.nlm.nih.gov/pubmed/27638945). The datasets comprises draft genome assemblies from Illumina HiSeq reads, resistance data, and lineages inferred from sequence cluster computed using [BAPS](http://www.helsinki.fi/bsg/software/BAPS/).
+We used 1102 clinical gonococcal isolates collected from 2000 to 2013 by the Centers for Disease Control and Prevention’s Gonococcal Isolate Surveillance Project \[[Grad *et al.*, 2016](https://www.ncbi.nlm.nih.gov/pubmed/27638945)\]. The datasets comprises draft genome assemblies from Illumina HiSeq reads, resistance data, and lineages inferred from sequence cluster computed using [BAPS](http://www.helsinki.fi/bsg/software/BAPS/).
 
 ## Methods
 
